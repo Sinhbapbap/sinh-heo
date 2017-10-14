@@ -1,0 +1,88 @@
+//bai 20+21+22+23+24
+// liet ke cac uoc n
+// tinh tong cac uoc
+// tinh tich cac uoc
+// dem so luong uoc
+// liet ke cac uoc so le
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+      int n;
+      int tong = 0, tich = 1, count = 0;  //  la tong, tich, count dem so  uoc!
+      printf("moi ban nhap n:");
+      scanf("%d", &n);
+      if( n<0 )
+      {
+            printf(" ban phai nhap n la so duong !");
+            return 0;
+      }
+      int i;
+      printf(" (bai 20) cac uoc cua n:");
+      for( i=1 ; i<=n ; i++)
+      {
+            if( n%i == 0 )
+                  {
+                  printf( "\t%d", i);//liet ke so uoc
+                  ++count;// dem so uoc
+                  tong += i;//tinh tong cac uoc
+                  tich *= i;// tinh tich cac uoc
+                  }
+
+      }
+ printf("\n\n(bai 23)so uoc cua n la :  %d", count);
+ printf("\n\n(bai 21)tong cac uoc la:  %d", tong);
+ printf("\n\n(bai 22)tich cac uoc la:  %d",tich);
+ // liet ke cac uoc so le (bai 24)
+ //tinh tich cac so le (bai 26)
+ // tinh uoc so là so le lon nhat (bai 29)
+ printf("\n\n(bai 24) cac uoc so le:");
+ int tongle = 0, tichle =1, maxle=0;
+  for( i=1; i<=n ; i++)
+  {
+        if(n%i==0 && i%2!=0)
+        {     if (i>maxle)
+                 {
+                       maxle=i;
+                 }
+              printf("  %d", i);
+              tongle +=i;
+              tichle*=1;// tich
+        }
+  }
+   printf(" \n\n\(bai 29)nmax le la: %d", maxle);
+   printf("\n\ntong le: %d", tongle);
+    printf("\n\n (bai26) tich le: %d", tichle);
+  //dem uoc  chan va tong so uoc chan bai 25+27
+ int tongchan = 0;
+ int count1=0;
+  for(i=1 ; i<=n ; i++)
+   {
+    if( n%i==0 && i%2==0)
+     {++count1;
+      tongchan+=i;}
+
+   }
+   printf("\n\n (bai 25)tong cac so chan: %d",tongchan);
+   printf("\n \n (bai 27)so luong uoc chan: %d", count1);
+
+   // bai 28: tinh tong cac uoc nho hon chinh no, n nhap tu ban phim
+   int tnn = 0; //tnn la tong cac uoc cua n, kh co tong lon hon n, vd: 2 va 5 la uoc cua 10,tnn= 2+5 <10 thỏa
+   printf(" \n\n( bai 28) ntong cac uoc nho hon chinh no:");
+   for(i=1, n%i==0; i<n ; i++)
+   {
+               tnn+=i;
+
+               if(tnn>=n)
+               {
+                     return 0;
+               }printf("\t%d" ,tnn);
+
+
+   }
+
+      getch();
+      return 0;
+}
+
+// phan user check nen dung do while!
